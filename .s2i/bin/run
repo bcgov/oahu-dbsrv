@@ -7,4 +7,4 @@
 #	https://github.com/openshift/source-to-image/blob/master/docs/builder_image.md
 #
 
-mvn exec:java
+mvn -Dmaven.repo.local=/opt/app-root/src/.m2 exec:java
