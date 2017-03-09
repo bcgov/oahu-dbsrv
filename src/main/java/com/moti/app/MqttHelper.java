@@ -38,7 +38,7 @@ class MqttHelper implements Runnable {
             MqttClient client = new MqttClient(config.getBrokerUrl(), "", persistence);
             client.connect(opts);
             System.out.println("Connection established!");
-            client.subscribe("#", 0, new IMqttMessageListener() {
+            client.subscribe(config.getBrokerTopic(), 0, new IMqttMessageListener() {
                 @Override
                 public void messageArrived(String s, MqttMessage message) throws Exception {
                     if(s.contains("EDC") || s.contains("sim-test")) {
